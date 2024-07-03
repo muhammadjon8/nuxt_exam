@@ -2,7 +2,8 @@
 
 <template>
   <div>
-    <h1>INdex file</h1>
+    <MainCarousel />
+    <MainKatalog />
   </div>
 </template>
 
