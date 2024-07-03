@@ -7,6 +7,7 @@
     <MainWhyNornlight />
     <MainPopularProducts />
     <MainMarque />
+    <MainBlog />
   </div>
 </template>
 

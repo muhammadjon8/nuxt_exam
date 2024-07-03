@@ -19,7 +19,7 @@ const { data, pending, error, refresh, clear } = await useFetch(
     </div>
     <div v-if="pending">Loading...</div>
     <div class="grid grid-cols-4 gap-5">
-      <div v-for="item in data" :key="data.id" class="relative">
+      <div v-for="item in data" :key="data.id" class="relative p-5 border rounded-md shadow-lg">
         <p class="absolute right-0 text-3xl">🤍</p>
         <img :src="item.image" alt="" />
         <p class="text-[20px] font-medium py-3">{{ item.description }}</p>

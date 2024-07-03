@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+const speed = ref(10);
+
+const speedUp = () => {
+  if (speed.value > 1) {
+    speed.value--;
+  }
+};
+
+const speedDown = () => {
+  if (speed.value < 10) {
+    speed.value++;
+  }
+};
+</script>
 
 <template>
   <div class="container py-5">
@@ -7,11 +21,19 @@
         Только проверенные бренды
       </h2>
       <div class="flex gap-2">
-        <i class="bx bx-left-arrow-alt border px-4 text-xl"></i>
-        <i class="bx bx-right-arrow-alt border px-4 text-xl"></i>
+        <i
+          class="bx bx-left-arrow-alt border px-4 text-xl"
+          @click="speedDown"
+        ></i>
+        <i
+          class="bx bx-right-arrow-alt border px-4 text-xl"
+          @click="speedUp"
+        ></i>
       </div>
     </div>
-    <Vue3Marquee>
+    <Vue3Marquee
+      :duration="speed"
+    >
       <img src="/marque1.png" alt="" class="px-2" />
       <img src="/marque2.png" alt="" class="px-2" />
       <img src="/marque3.png" alt="" class="px-2" />
