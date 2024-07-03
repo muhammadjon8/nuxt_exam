@@ -10,7 +10,7 @@
             disableOnInteraction: false,
           }"
           :modules="modules"
-          class="mySwiper"
+          class="mySwiper max-sm:w-[300px]"
         >
           <swiper-slide v-for="(item, index) in 7" :key="index">
             <div class="md:flex gap-[199px] mb-[47px] py-9 md:px-10 rounded-xl bg-[#F2F2F2]">
