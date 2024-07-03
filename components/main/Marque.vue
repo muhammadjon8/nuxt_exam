@@ -34,9 +34,9 @@ const speedDown = () => {
     <Vue3Marquee
       :duration="speed"
     >
-      <img src="/marque1.png" alt="" class="px-2" />
-      <img src="/marque2.png" alt="" class="px-2" />
-      <img src="/marque3.png" alt="" class="px-2" />
+      <img src="/marque1.png" alt="" class="px-2 h-2/3" />
+      <img src="/marque2.png" alt="" class="px-2 h-2/3" />
+      <img src="/marque3.png" alt="" class="px-2 h-2/3" />
     </Vue3Marquee>
   </div>
 </template>
