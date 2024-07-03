@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="container py-3">
+  <div class="max-sm:hidden container py-3">
     <div class="flex justify-between items-center">
       <div class="flex gap-4">
         <nuxt-link to="about-us">О компании</nuxt-link>

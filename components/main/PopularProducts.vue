@@ -9,7 +9,7 @@ const { data, pending, error, refresh, clear } = await useFetch(
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">Популярные товары</h2>
       <div
-        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black"
+        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden"
       >
         <button>Весь товары</button>
         <i
@@ -18,8 +18,12 @@ const { data, pending, error, refresh, clear } = await useFetch(
       </div>
     </div>
     <div v-if="pending">Loading...</div>
-    <div class="grid grid-cols-4 gap-5">
-      <div v-for="item in data" :key="data.id" class="relative p-5 border rounded-md shadow-lg">
+    <div class="grid grid-cols-4 gap-5 max-sm:grid-cols-2">
+      <div
+        v-for="item in data"
+        :key="data.id"
+        class="relative p-5 border rounded-md shadow-lg"
+      >
         <p class="absolute right-0 text-3xl">🤍</p>
         <img :src="item.image" alt="" />
         <p class="text-[20px] font-medium py-3">{{ item.description }}</p>
@@ -35,6 +39,14 @@ const { data, pending, error, refresh, clear } = await useFetch(
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="flex items-center justify-center gap-2 border rounded-full py-5 px-4 border-black md:hidden mt-10"
+    >
+      <button>Популярные товары</button>
+      <i
+        class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-100"
+      ></i>
     </div>
   </div>
 </template>

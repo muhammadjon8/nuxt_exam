@@ -3,11 +3,11 @@ const imgs = ref(["/blog1.png", "/blog2.png", "/blog3.png"]);
 </script>
 
 <template>
-  <div class="container py-5">
+  <div class="container py-5 max-sm:px-3">
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">Блог</h2>
       <div
-        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black"
+        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden"
       >
         <button>Перейти в блог</button>
         <i
@@ -15,7 +15,7 @@ const imgs = ref(["/blog1.png", "/blog2.png", "/blog3.png"]);
         ></i>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-5">
+    <div class="md:grid grid-cols-3 gap-5">
       <div v-for="(img, index) in imgs" :key="index" class="border rounded">
         <img :src="img" alt="" />
         <div class="flex justify-between py-3 items-center gap-5 px-3">
@@ -27,12 +27,20 @@ const imgs = ref(["/blog1.png", "/blog2.png", "/blog3.png"]);
         <p class="py-3 px-3">01.01.2024</p>
       </div>
     </div>
-    <div class="flex py-11">
-      <h3 class="w-1/2 text-5xl">
+    <div
+      class="flex items-center justify-center gap-2 border rounded-full py-5 px-4 border-black md:hidden mt-10"
+    >
+      <button>Перейти в блог</button>
+      <i
+        class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-100"
+      ></i>
+    </div>
+    <div class="md:flex py-11">
+      <h3 class="md:w-1/2 text-5xl max-sm:py-4">
         Производство <br />
         светильников
       </h3>
-      <p class="w-1/2 text-[20px] font-medium text-[#454545]">
+      <p class="md:w-1/2 text-[20px] font-medium text-[#454545]">
         Интернет-магазин NORNLIGHT предлагает широкий ассортимент светильников
         для освещения вашего дома или офиса. У нас вы найдете разнообразные
         модели светильников, от современных и стильных до классических и

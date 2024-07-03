@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex justify-center">
-    <div class="bg-second rounded-[50px] mt-8 w-[1714px]">
+  <div class="md:w-full flex justify-center">
+    <div class="bg-second rounded-[50px] mt-8 md:w-[1714px]">
       <div class="container">
         <swiper
           :pagination="true"
@@ -13,8 +13,15 @@
           class="mySwiper"
         >
           <swiper-slide v-for="(item, index) in 7" :key="index">
-            <div class="flex gap-[199px] mb-[47px]">
-              <img src="/karusel.png" class="" alt="Candle" />
+            <div class="md:flex gap-[199px] mb-[47px] py-9 md:px-10 rounded-xl bg-[#F2F2F2]">
+              <img src="/karuselimg.png" alt="" class="md:hidden w-[300px]" />
+              <p class="md:hidden w-[300px] text-3xl font-bold leading-9">
+                Скидка 15% на все подвесные светильники
+              </p>
+              <p class="bg-[#454545] py-1 px-4 text-3xl rounded-full text-white md:hidden w-3/4"
+                >до 5 февраля</p
+              >
+              <img src="/karusel.png" class="max-sm:hidden" alt="Candle" />
             </div>
           </swiper-slide>
         </swiper>

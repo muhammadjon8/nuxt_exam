@@ -15,12 +15,12 @@ const speedDown = () => {
 </script>
 
 <template>
-  <div class="container py-5">
+  <div class="container py-5 max-sm:px-3">
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">
         Только проверенные бренды
       </h2>
-      <div class="flex gap-2">
+      <div class="flex gap-2 max-sm:hidden">
         <i
           class="bx bx-left-arrow-alt border px-4 text-xl"
           @click="speedDown"
