@@ -1,52 +1,59 @@
 <template>
-  <div class="relative py-9 px-5">
-    <div class="mx-auto flex justify-center items-center">
-      <div class="relative">
-        <img
-          :src="currentImage"
-          :alt="`Slider Image ${currentIndex + 1}`"
-          class="max-w-full h-auto"
-        />
-        <div class="absolute bottom-0 left-0 right-0 flex justify-end mb-4 pr-5">
-          <div class="flex">
-            <template v-for="(image, index) in images" :key="index">
-              <button
-                @click="changeSlide(index)"
-                :class="[
-                  'h-[6px] w-[6px] mx-1 rounded-full',
-                  {
-                    'bg-[#454545]': currentIndex === index,
-                    'bg-gray-300': currentIndex !== index,
-                  },
-                ]"
-              ></button>
-            </template>
-          </div>
-        </div>
+  <div class="w-full flex justify-center">
+    <div class="bg-second rounded-[50px] mt-8 w-[1714px]">
+      <div class="container">
+        <swiper
+          :pagination="true"
+          :loop="true"
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+          }"
+          :modules="modules"
+          class="mySwiper"
+        >
+          <swiper-slide v-for="(item, index) in 7" :key="index">
+            <div class="flex gap-[199px] mb-[47px]">
+              <img src="/karusel.png" class="" alt="Candle" />
+            </div>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      currentIndex: 0,
-      images: ["/karusel.png", "/karusel.png", "/karusel.png","/karusel.png", "/karusel.png", "/karusel.png", "/karusel.png", "/karusel.png"],
-    };
-  },
-  computed: {
-    currentImage() {
-      return this.images[this.currentIndex];
-    },
-  },
-  methods: {
-    changeSlide(index) {
-      this.currentIndex = index;
-    },
-  },
-};
-</script>
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css/navigation";
+import "swiper/css"; // Import Swiper styles
+import "swiper/css/pagination"; // Import Swiper pagination styles
+import { Autoplay, Pagination, Navigation } from "swiper/modules"; // Import Swiper pagination module
 
-<style></style>
+const modules = [Autoplay, Pagination, Navigation];
+</script>
+<style scoped>
+/* Swiper styles */
+.swiper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+.swiper:active {
+  cursor: grabbing;
+}
+
+/* Swiper slide styles */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination {
+  position: absolute;
+  right: 20px; /* Adjust as needed */
+  bottom: 20px; /* Adjust as needed */
+}
+</style>

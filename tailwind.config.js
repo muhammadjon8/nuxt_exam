@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       container: {
+        center: true,
         padding: {
           default: "2rem",
           sm: "1.5rem",
@@ -11,7 +12,6 @@ export default {
           lg: "2.5rem",
           xl: "3rem",
         },
-        center: true,
       },
     },
   },

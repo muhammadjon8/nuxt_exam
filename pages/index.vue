@@ -4,6 +4,9 @@
   <div>
     <MainCarousel />
     <MainKatalog />
+    <MainWhyNornlight />
+    <MainPopularProducts />
+    <MainMarque />
   </div>
 </template>
 

@@ -12,6 +12,8 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.12.3",
-    "vue": "latest"
+    "nuxt-swiper": "^1.2.2",
+    "vue": "latest",
+    "vue3-marquee": "^4.2.0"
   }
 }

@@ -9,11 +9,9 @@ useHead({
 </script>
 
 <template>
-  <div class="container">
-    <navbarTopHeader />
-    <Navbar />
-    <slot />
-  </div>
+  <navbarTopHeader />
+  <Navbar />
+  <slot />
 </template>
 
 <style scoped></style>
