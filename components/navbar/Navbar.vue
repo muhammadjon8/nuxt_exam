@@ -23,7 +23,7 @@
           <div class="border rounded-xl mx-1 items-center flex w-full">
             <input
               type="text"
-              class="px-2 rounded-lg py-1 outline-none w-[600px]"
+              class="px-2 rounded-lg py-1 outline-none w-[600px] backdrop-blur-lg bg-white/30"
               placeholder="Поиск по товарам"
             />
             <i class="bx bx-search px-2"></i>

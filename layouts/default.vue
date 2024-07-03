@@ -12,6 +12,7 @@ useHead({
   <navbarTopHeader />
   <Navbar />
   <slot />
+  <Footer />
 </template>
 
 <style scoped></style>
