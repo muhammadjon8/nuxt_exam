@@ -32,29 +32,29 @@
         <div class="md:flex justify-around md:w-1/2 gap-10">
           <div class="py-9 flex flex-col">
             <h4 class="text-2xl text-[#454545] font-bold pb-5">Покупателям</h4>
-            <button class="ftr_btn">О компании</button>
-            <button class="ftr_btn">Доставка и оплата</button>
-            <button class="ftr_btn">Возврат</button>
-            <button class="ftr_btn">Гарантии</button>
-            <button class="ftr_btn">Контакты</button>
-            <button class="ftr_btn">Блог</button>
+            <nuxt-link to="/about_us" class="ftr_btn">О компании</nuxt-link>
+            <nuxt-link to="/delivery" class="ftr_btn">Доставка и оплата</nuxt-link>
+            <nuxt-link to="" class="ftr_btn">Возврат</nuxt-link>
+            <nuxt-link to="" class="ftr_btn">Гарантии</nuxt-link>
+            <nuxt-link to="" class="ftr_btn">Контакты</nuxt-link>
+            <nuxt-link to="" class="ftr_btn">Блог</nuxt-link>
           </div>
           <div class="md:flex gap-16 items-center">
             <div class="md:py-9 flex flex-col">
               <h4 class="text-2xl text-[#454545] font-bold pb-5">Товары</h4>
-              <button class="ftr_btn">Люстры</button>
-              <button class="ftr_btn">Светильники</button>
-              <button class="ftr_btn">Бра</button>
-              <button class="ftr_btn">Торшеры</button>
-              <button class="ftr_btn">Комплектуюшие</button>
-              <button class="ftr_btn">Настольные лампы</button>
+              <nuxt-link to="" class="ftr_btn">Люстры</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Светильники</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Бра</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Торшеры</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Комплектуюшие</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Настольные лампы</nuxt-link>
             </div>
             <div class="md:py-14 flex flex-col">
-              <button class="ftr_btn">Споты</button>
-              <button class="ftr_btn">Трековые светильники</button>
-              <button class="ftr_btn">Уличные светильники</button>
-              <button class="ftr_btn">Технические светильники</button>
-              <button class="ftr_btn">Светодиодные ленты</button>
+              <nuxt-link to="" class="ftr_btn">Споты</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Трековые светильники</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Уличные светильники</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Технические светильники</nuxt-link>
+              <nuxt-link to="" class="ftr_btn">Светодиодные ленты</nuxt-link>
             </div>
           </div>
         </div>

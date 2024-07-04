@@ -9,13 +9,13 @@
       >
         <button>Весь каталог</button>
         <i
-          class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-100"
+          class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-200 hover:bg-[#454545] hover:text-white"
         ></i>
       </div>
     </div>
     <div class="grid grid-cols-3 gap-4 max-sm:grid-cols-2">
       <div
-        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200"
+        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200 hover:bg-[#454545] hover:text-white"
       >
         <div class="flex flex-col justify-between w-[45%]">
           <p class="text-[22px] font-medium">Люстры</p>
@@ -27,7 +27,7 @@
         <img src="/lyustra.png" alt="" class="md:w-[50%]" />
       </div>
       <div
-        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200"
+        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200 hover:bg-[#454545] hover:text-white"
       >
         <div class="flex flex-col justify-between w-[45%]">
           <p class="text-[22px] font-medium">Светильники</p>
@@ -39,7 +39,7 @@
         <img src="/lyustra1.png" alt="" class="md:w-[50%]" />
       </div>
       <div
-        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200"
+        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200 hover:bg-[#454545] hover:text-white"
       >
         <div class="flex flex-col justify-between w-[45%]">
           <p class="text-[22px] font-medium">Люстры</p>
@@ -51,7 +51,7 @@
         <img src="/lyustra2.png" alt="" class="md:w-1/2" />
       </div>
       <div
-        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200"
+        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200 hover:bg-[#454545] hover:text-white"
       >
         <div class="flex flex-col justify-between w-[45%]">
           <p class="text-[22px] font-medium">Люстры</p>
@@ -63,7 +63,7 @@
         <img src="/lyustra3.png" alt="" class="md:w-[50%]" />
       </div>
       <div
-        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200"
+        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200 hover:bg-[#454545] hover:text-white"
       >
         <div class="flex flex-col justify-between w-[45%]">
           <p class="text-[22px] font-medium">Люстры</p>
@@ -75,7 +75,7 @@
         <img src="/lyustra4.png" alt="" class="md:w-[50%]" />
       </div>
       <div
-        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200"
+        class="md:flex bg-[#F2F2F2] p-8 max-sm:p-2 rounded-2xl hover:scale-105 duration-200 hover:bg-[#454545] hover:text-white"
       >
         <div class="flex flex-col justify-between w-[45%]">
           <p class="text-[22px] font-medium">Люстры</p>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div
-      class="flex items-center justify-center gap-2 border rounded-full py-5 px-4 border-black md:hidden mt-10"
+      class="flex items-center justify-center gap-2 border rounded-full py-5 px-4 border-black md:hidden mt-10 hover:bg-[#454545] hover:text-white"
     >
       <button>Весь каталог</button>
       <i

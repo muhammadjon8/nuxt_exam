@@ -4,14 +4,14 @@
   <div class="container max-sm:px-3">
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">Почему NORNLIGHT</h2>
-      <div
+      <nuxt-link to="/about_us"
         class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden"
       >
         <button>О компании</button>
         <i
           class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-100"
         ></i>
-      </div>
+      </nuxt-link>
     </div>
     <div class="grid md:grid-cols-4 gap-5 max-sm:grid-cols-2">
       <div class="border md:p-9 max-sm:p-3">
@@ -45,14 +45,14 @@
         <p class="font-light">Более 1000 товаров</p>
       </div>
     </div>
-    <div
+    <nuxt-link to="/about_us"
       class="flex items-center justify-center gap-2 border rounded-full py-5 px-4 border-black md:hidden mt-10"
     >
       <button>О компании</button>
       <i
         class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-100"
       ></i>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 

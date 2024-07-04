@@ -50,7 +50,7 @@
         </div>
       </div>
       <div
-          class="border rounded-xl mx-1 items-center flex w-full"
+          class="border rounded-xl mx-1 items-center flex w-full md:hidden"
         >
           <input
             type="text"

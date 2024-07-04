@@ -8,6 +8,7 @@
     <MainPopularProducts />
     <MainMarque />
     <MainBlog />
+    <MainBlog2 />
   </div>
 </template>
 
