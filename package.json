@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.21",
+    "@iconify-json/material-symbols": "^1.1.83",
+    "@iconify-json/ph": "^1.1.13",
     "@iconify-json/tabler": "^1.1.116",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1"
   }
