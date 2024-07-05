@@ -16,7 +16,7 @@ function remove(item) {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container max-sm:px-3">
     <div class="flex items-center gap-3">
       <nuxt-link to="/" class="text-[#454545] py-4">Главная ></nuxt-link>
 

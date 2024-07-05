@@ -5,7 +5,10 @@ const store = usePiniaStore();
 </script>
 
 <template>
-  <div class="container py-9 max-sm:px-3">
+  <div class="container max-sm:px-3">
+    <div class="flex items-center gap-3">
+      <nuxt-link to="/" class="text-[#454545] py-4">Главная ></nuxt-link>
+    </div>
     <div class="py-9">
       <div class="md:w-1/2">
         <h2 class="text-[#454545] text-6xl font-bold py-5">Избранные товары</h2>
@@ -21,7 +24,12 @@ const store = usePiniaStore();
         v-if="store.likedProducts.length == 0"
         class="flex justify-center items-center flex-col mt-[100px]"
       >
-        <Icon name="game-icons:cardboard-box" width="256" height="256" class="text-9xl" />
+        <Icon
+          name="game-icons:cardboard-box"
+          width="256"
+          height="256"
+          class="text-9xl"
+        />
         <p class="text-[#454545] text-xl font-medium ml-4">
           Вы не выбрали товара
         </p>
@@ -31,4 +39,3 @@ const store = usePiniaStore();
 </template>
 
 <style scoped></style>
-
