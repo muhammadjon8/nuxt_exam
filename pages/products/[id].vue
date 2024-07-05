@@ -1,24 +1,17 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
+import axios from "axios";
 
 const route = useRoute();
 const id = route.params.id;
+
 const item = ref(null);
-const loading = ref(true);
-const error = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await fetch(
-      `https://6684e64e56e7503d1ae18994.mockapi.io/products/products/${id}`
-    );
-    if (!response.ok) throw new Error("Failed to fetch data");
-    item.value = await response.json();
-  } catch (err) {
-    error.value = err.message;
-  } finally {
-    loading.value = false;
+    const response = await axios.get(`https://6684e64e56e7503d1ae18994.mockapi.io/products/products/${id}`);
+    item.value = response.data;
+  } catch (error) {
+    console.error("Error fetching item:", error);
   }
 });
 </script>

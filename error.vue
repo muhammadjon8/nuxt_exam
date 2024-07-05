@@ -1,7 +1,4 @@
 <script>
-definePageMeta({
-  layout: "error",
-});
 </script>
 
 <template v-if="error.statusCode === 404">

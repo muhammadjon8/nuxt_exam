@@ -1,6 +1,5 @@
 <script setup>
 import { usePiniaStore } from "../../store";
-import { useRouter } from 'vue-router';
 
 const store = usePiniaStore();
 const props = defineProps({
@@ -19,29 +18,25 @@ const toggleBasket = () => {
 };
 
 const isInKorzina = computed(() => {
-  return store.basket.some(p => p.id === props.product.id);
+  return store.basket.some((p) => p.id === props.product.id);
 });
 
 const isLiked = computed(() => {
-  return store.likedProducts.some(p => p.id === props.product.id);
+  return store.likedProducts.some((p) => p.id === props.product.id);
 });
 
 const router = useRouter();
-
-watch(() => props.product, (newVal) => {
-  if (newVal) {
-    // Ensure properties are not null before using them
-    console.log('Product updated:', newVal);
-  }
-});
 </script>
 
 <template>
   <div>
-    <div class="relative p-5 border rounded-md shadow-lg cursor-pointer">
-      <button @click="toggleLike" class="absolute right-0 text-3xl">
+    <div
+      @click="router.push(`/products/${props.product.id}`)"
+      class="relative p-5 border rounded-md shadow-lg cursor-pointer"
+    >
+      <button @click.stop="toggleLike" class="absolute right-0 text-3xl">
         <Icon
-          v-if="isLiked"
+          v-show="isLiked"
           name="ph:heart-fill"
           width="24"
           height="24"
@@ -49,7 +44,7 @@ watch(() => props.product, (newVal) => {
           style="color: red"
         />
         <Icon
-          v-else
+          v-show="!isLiked"
           name="ph:heart-fill"
           width="24"
           height="24"
@@ -58,22 +53,22 @@ watch(() => props.product, (newVal) => {
         />
       </button>
 
-      <div @click="router.push(`/products/${props.product.id}`)">
-        <img :src="props.product.image" alt="" class="w-[90%]" />
+      <div>
+        <img :src="props?.product.image" alt="" class="w-[90%]" />
         <p class="text-[20px] font-medium py-3 h-[90px]">
-          {{ props.product.description }}
+          {{ props?.product.description }}
         </p>
         <div class="flex justify-between items-end z-40">
           <div class="py-3">
             <p class="text-[#454545] line-through">
-              {{ props.product.sale }} ₽
+              {{ props?.product.sale }} ₽
             </p>
-            <p class="text-[20px] font-semibold">{{ props.product.price }}₽</p>
+            <p class="text-[20px] font-semibold">{{ props?.product.price }}₽</p>
           </div>
-          <div class="py-3 ">
+          <div class="py-3 z-50">
             <button
-              @click="toggleBasket"
-              class="bg-[#454545] px-4 rounded-2xl py-2"
+              @click.stop="toggleBasket"
+              class="bg-[#454545] px-4 rounded-2xl py-2 z-50"
             >
               <Icon
                 v-if="isInKorzina"
@@ -81,7 +76,7 @@ watch(() => props.product, (newVal) => {
                 width="24"
                 height="24"
                 style="color: white"
-                class="text-2xl"
+                class="text-2xl z-50"
               />
               <Icon
                 v-else
@@ -89,7 +84,7 @@ watch(() => props.product, (newVal) => {
                 width="24"
                 height="24"
                 style="color: white"
-                class="text-2xl"
+                class="text-2xl z-50"
               />
             </button>
           </div>
