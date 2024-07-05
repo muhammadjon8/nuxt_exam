@@ -2,9 +2,10 @@
 definePageMeta({
   layout: "error",
 });
+const error = defineNuxtError();
 </script>
 
-<template>
+<template v-if="error.statusCode === 404">
   <div class="container p-10 flex items-center flex-col">
     <div class="flex justify-center text-9xl font-bold m-10 text-gray-400">
       404

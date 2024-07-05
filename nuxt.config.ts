@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.js
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
@@ -7,5 +7,6 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
   ],
+
   compatibilityDate: "2024-07-04",
 });

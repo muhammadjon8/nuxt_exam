@@ -1,15 +1,31 @@
 <script setup>
+import { usePiniaStore } from "../../store";
+
+const store = usePiniaStore();
 const data = defineProps({
   product: Object,
+});
+const toggleLike = () => {
+  store.addLikedProducts(data.product);
+};
+const isLiked = computed(() => {
+  const index = store.likedProducts.findIndex((p) => p.id == data.product.id);
+  return index == -1;
 });
 </script>
 
 <template>
   <div>
     <div class="relative p-5 border rounded-md shadow-lg">
-      <p class="absolute right-0 text-3xl">🤍</p>
+      <button @click="toggleLike" class="absolute right-0 text-3xl">
+        <Icon v-if="isLiked" name="ph:heart-fill" width="24" height="24" style="color: gray" />
+        <Icon v-else name="ph:heart-fill" width="24" height="24" style="color: red" />
+      </button>
+
       <img :src="product.image" alt="" />
-      <p class="text-[20px] font-medium py-3 h-[90px]">{{ product.description }}</p>
+      <p class="text-[20px] font-medium py-3 h-[90px]">
+        {{ product.description }}
+      </p>
       <div class="flex justify-between items-end">
         <div class="py-3">
           <p class="text-[#454545] line-through">{{ product.sale }} ₽</p>
