@@ -6,7 +6,7 @@ const store = usePiniaStore();
 
 <template>
   <div
-    class="sticky top-0 left-0 z-10 backdrop-blur-lg bg-white/30 md:py-5 max-sm:pb-3 max-sm:px-3"
+    class="sticky top-0 left-0 backdrop-blur-lg bg-white/30 md:py-5 max-sm:pb-3 max-sm:px-3 z-50"
   >
     <div class="container">
       <div class="flex justify-between gap-3 items-center max-sm:py-3">
