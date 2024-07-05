@@ -40,7 +40,7 @@ const router = useRouter();
           name="ph:heart-fill"
           width="24"
           height="24"
-          class="mr-4 z-50"
+          class="mr-4 z-40"
           style="color: red"
         />
         <Icon
@@ -48,7 +48,7 @@ const router = useRouter();
           name="ph:heart-fill"
           width="24"
           height="24"
-          class="mr-4 z-50"
+          class="mr-4 z-40"
           style="color: gray"
         />
       </button>
@@ -76,7 +76,7 @@ const router = useRouter();
                 width="24"
                 height="24"
                 style="color: white"
-                class="text-2xl z-50"
+                class="text-2xl z-40"
               />
               <Icon
                 v-else
@@ -84,7 +84,7 @@ const router = useRouter();
                 width="24"
                 height="24"
                 style="color: white"
-                class="text-2xl z-50"
+                class="text-2xl z-40"
               />
             </button>
           </div>
