@@ -35,10 +35,10 @@
           </div>
         </div>
         <div class="flex gap-3 cursor-pointer">
-          <div class="flex flex-col items-center">
+          <nuxt-link to="/likedProducts" class="flex flex-col items-center">
             <i class="bx bx-heart text-[20px] max-sm:text-3xl"></i>
             <p class="max-sm:hidden">Избранное</p>
-          </div>
+          </nuxt-link>
           <div class="flex flex-col items-center cursor-pointer max-sm:hidden">
             <i class="bx bx-bar-chart text-[20px]"></i>
             <p class="max-sm:hidden">Сравнение</p>

@@ -23,6 +23,27 @@
     </div>
   </div>
   <MainMap />
+  <div class="container relative flex justify-center">
+    <div class="absolute bg-[#454545] flex justify-between items-center px-6 py-8 gap-10 bottom-10 text-white" >
+      <div>
+        <p>Адрес магазина</p>
+      <p>г. Москва, Дмитровское шоссе д.100с2</p>
+    </div>
+    <div>
+      <p>Почта</p>
+      <p>NORNLIGHT@mail.ru</p>
+    </div>
+    <div>
+      <p>Телефон</p>
+      <p>8 (800) 890-46-56</p>
+    </div>
+    <div>
+      <nuxt-link to="/order" class="px-5 py-3 bg-white rounded-full text-black">
+        <button class="">Оставить заявку</button>
+      </nuxt-link>
+    </div>
+  </div>
+</div>
 </template>
 
 <style scoped></style>

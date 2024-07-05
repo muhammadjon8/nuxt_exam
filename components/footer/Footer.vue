@@ -34,10 +34,10 @@
             <h4 class="text-2xl text-[#454545] font-bold pb-5">Покупателям</h4>
             <nuxt-link to="/about_us" class="ftr_btn">О компании</nuxt-link>
             <nuxt-link to="/delivery" class="ftr_btn">Доставка и оплата</nuxt-link>
-            <nuxt-link to="" class="ftr_btn">Возврат</nuxt-link>
-            <nuxt-link to="" class="ftr_btn">Гарантии</nuxt-link>
-            <nuxt-link to="" class="ftr_btn">Контакты</nuxt-link>
-            <nuxt-link to="" class="ftr_btn">Блог</nuxt-link>
+            <nuxt-link to="/return" class="ftr_btn">Возврат</nuxt-link>
+            <nuxt-link to="/guarantee" class="ftr_btn">Гарантии</nuxt-link>
+            <nuxt-link to="/contacts" class="ftr_btn">Контакты</nuxt-link>
+            <nuxt-link to="/blog" class="ftr_btn">Блог</nuxt-link>
           </div>
           <div class="md:flex gap-16 items-center">
             <div class="md:py-9 flex flex-col">
