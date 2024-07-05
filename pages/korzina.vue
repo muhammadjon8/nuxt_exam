@@ -1,0 +1,103 @@
+<script setup>
+import { usePiniaStore } from "../store";
+
+const store = usePiniaStore();
+console.log(store.basket);
+
+function decrement(item) {
+  if (item.quantity > 0) {
+    item.quantity--;
+  }
+}
+function remove(item) {
+  const index = store.basket.findIndex((p) => p.id == item.id);
+  store.basket.splice(index, 1);
+}
+</script>
+
+<template>
+  <div class="container">
+    <div class="flex items-center gap-3">
+      <nuxt-link to="/" class="text-[#454545] py-4">Главная ></nuxt-link>
+
+      <nuxt-link to="/catalog" class="text-[#454545] py-4"
+        >Каталог >
+      </nuxt-link>
+      <p>Корзина ></p>
+    </div>
+    <div class="py-9">
+      <div class="md:w-1/2">
+        <h2 class="text-[#454545] text-6xl font-bold py-5">Корзина</h2>
+      </div>
+      <div
+        v-if="store.basket.length == 0"
+        class="flex justify-center items-center flex-col mt-[100px]"
+      >
+        <Icon
+          name="game-icons:cardboard-box"
+          width="256"
+          height="256"
+          class="text-9xl"
+        />
+        <p class="text-[#454545] text-xl font-medium ml-4">
+          Вы не выбрали товара на Корзина
+        </p>
+      </div>
+    </div>
+    <table v-if="store.basket.length > 0" class="bg-[#F2F2F2] rounded-lg">
+      <thead class="py-5">
+        <tr class="border-b">
+          <th class="py-5 text-gray-500">Фото</th>
+          <th class="py-5 text-gray-500">Товары</th>
+          <th class="py-5 text-gray-500 w-2/4">Описание</th>
+          <th class="py-5 text-gray-500">Артикул</th>
+          <th class="py-5 text-gray-500">Количество</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b" v-for="item in store.basket" :key="item.id">
+          <td class="px-8 py-5">
+            <img
+              :src="item.image"
+              alt="Product Image"
+              class="h-[100px] w-[100px] rounded"
+            />
+          </td>
+          <td>
+            <div class="flex flex-col gap-5 justify-between">
+              <p class="font-semibold text-xl text-[#454545]">
+                {{ item.description }}
+              </p>
+              <p class="font-bold">{{ item.price * item.quantity }} ₽</p>
+            </div>
+          </td>
+          <td class="font-normal text-start">{{ item.about }}</td>
+          <td class="px-3">{{ item.artikul }}</td>
+          <td class="px-3">
+            <div class="flex gap-3">
+              <button @click="decrement(item)" class="text-3xl">-</button>
+              <p class="border p-5">{{ item.quantity }}</p>
+              <button @click="item.quantity++" class="text-3xl">+</button>
+            </div>
+          </td>
+          <td class="px-5">
+            <button @click="remove(item)">
+              <Icon
+                name="material-symbols:delete-outline"
+                width="24"
+                height="24"
+                style="color: black"
+                class="text-2xl"
+              />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<style>
+/* Add your styles here */
+</style>

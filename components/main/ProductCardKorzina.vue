@@ -8,15 +8,6 @@ const props = defineProps({
 const toggleLike = () => {
   store.addLikedProducts(props.product);
 };
-const toggleBasket = () => {
-  store.addToKorzina(props.product);
-};
-
-const isInKorzina = computed(() => {
-  const index = store.basket.findIndex((p) => p.id == props.product.id);
-  return index == -1;
-});
-
 const isLiked = computed(() => {
   const index = store.likedProducts.findIndex((p) => p.id == props.product.id);
   return index == -1;
@@ -27,20 +18,8 @@ const isLiked = computed(() => {
   <div>
     <div class="relative p-5 border rounded-md shadow-lg">
       <button @click="toggleLike" class="absolute right-0 text-3xl">
-        <Icon
-          v-if="isLiked"
-          name="ph:heart-fill"
-          width="24"
-          height="24"
-          style="color: gray"
-        />
-        <Icon
-          v-else
-          name="ph:heart-fill"
-          width="24"
-          height="24"
-          style="color: red"
-        />
+        <Icon v-if="isLiked" name="ph:heart-fill" width="24" height="24" style="color: gray" />
+        <Icon v-else name="ph:heart-fill" width="24" height="24" style="color: red" />
       </button>
 
       <img :src="product.image" alt="" />
@@ -53,9 +32,8 @@ const isLiked = computed(() => {
           <p class="text-[20px] font-semibold">{{ product.price }}₽</p>
         </div>
         <div class="py-3">
-          <button @click="toggleBasket" class="bg-[#454545] px-4 rounded-2xl py-2">
-            <Icon v-if="isInKorzina" name="vaadin:cart-o" width="24" height="24" style="color:white" class="text-2xl"/>
-            <Icon v-else name="material-symbols:delete-outline" width="24" height="24" style="color:white" class="text-2xl"/>
+          <button class="bg-[#454545] px-4 rounded-2xl py-1">
+            <i class="bx bx-cart text-white text-xl"></i>
           </button>
         </div>
       </div>

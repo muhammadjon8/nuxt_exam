@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { usePiniaStore } from "../../store";
+
+const store = usePiniaStore();
+</script>
 
 <template>
   <div
@@ -17,10 +21,10 @@
           <button
             class="bg-[#454545] text-white px-6 py-2 rounded-full hidden lg:flex"
           >
-            <div class="flex justify-between gap-2 items-center">
+            <nuxt-link to="/catalog" class="flex justify-between gap-2 items-center">
               <img src="/katalogIcon.png" alt="" class="h-3" />
               <p class="">Каталог</p>
-            </div>
+            </nuxt-link>
           </button>
 
           <div
@@ -34,7 +38,14 @@
             <i class="bx bx-search px-2"></i>
           </div>
         </div>
-        <div class="flex gap-3 cursor-pointer">
+        <div class="flex gap-3 cursor-pointer relative">
+          <div class="absolute w-4 h-2 ml-11 bottom-11">
+            <p
+              class="bg-red-500 text-center rounded-full text-white text-[12px]"
+            >
+              {{ store.likedProducts.length }}
+            </p>
+          </div>
           <nuxt-link to="/likedProducts" class="flex flex-col items-center">
             <i class="bx bx-heart text-[20px] max-sm:text-3xl"></i>
             <p class="max-sm:hidden">Избранное</p>
@@ -43,22 +54,27 @@
             <i class="bx bx-bar-chart text-[20px]"></i>
             <p class="max-sm:hidden">Сравнение</p>
           </div>
-          <div class="flex flex-col items-center cursor-pointer">
+          <div class="absolute w-4 h-2 ml-[220px] bottom-11">
+            <p
+              class="bg-red-500 text-center rounded-full text-white text-[12px]"
+            >
+              {{ store.basket.length }}
+            </p>
+          </div>
+          <nuxt-link to="/korzina" class="flex flex-col items-center cursor-pointer">
             <i class="bx bx-cart text-[20px] max-sm:text-3xl"></i>
             <p class="max-sm:hidden">Корзина</p>
-          </div>
+          </nuxt-link>
         </div>
       </div>
-      <div
-          class="border rounded-xl mx-1 items-center flex w-full md:hidden"
-        >
-          <input
-            type="text"
-            class="px-2 rounded-lg py-1 outline-none w-[600px] backdrop-blur-lg bg-white/30"
-            placeholder="Поиск по товарам"
-          />
-          <i class="bx bx-search px-2"></i>
-        </div>
+      <div class="border rounded-xl mx-1 items-center flex w-full md:hidden">
+        <input
+          type="text"
+          class="px-2 rounded-lg py-1 outline-none w-[600px] backdrop-blur-lg bg-white/30"
+          placeholder="Поиск по товарам"
+        />
+        <i class="bx bx-search px-2"></i>
+      </div>
     </div>
   </div>
 </template>

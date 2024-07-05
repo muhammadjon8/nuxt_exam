@@ -16,6 +16,15 @@ export const usePiniaStore = defineStore("pinia", {
         this.likedProducts.splice(index, 1);
       }
     },
+    addToKorzina(product, quantity) {
+      console.log("product", product);
+      const index = this.basket.findIndex((p) => p.id === product.id);
+      if (index == -1) {
+        this.basket.push({ ...product, quantity: quantity || 1 });
+      } else {
+        this.basket.splice(index, 1);
+      }
+    },
   },
   persist: true,
 });
