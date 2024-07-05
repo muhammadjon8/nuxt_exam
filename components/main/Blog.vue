@@ -7,7 +7,7 @@ const imgs = ref(["/blog1.png", "/blog2.png", "/blog3.png"]);
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">Блог</h2>
       <div
-        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden"
+        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden hover:bg-[#454545] hover:text-white"
       >
         <button>Перейти в блог</button>
         <i

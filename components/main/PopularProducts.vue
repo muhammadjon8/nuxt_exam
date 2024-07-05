@@ -8,8 +8,8 @@ const { data, pending, error, refresh, clear } = await useFetch(
   <div class="container max-sm:px-3">
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">Популярные товары</h2>
-      <nuxt-link to="/popular"
-        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden"
+      <nuxt-link to="/products"
+        class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden hover:bg-[#454545] hover:text-white"
       >
         <button>Весь товары</button>
         <i
