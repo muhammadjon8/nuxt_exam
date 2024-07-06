@@ -6,14 +6,14 @@ const imgs = ref(["/blog1.png", "/blog2.png", "/blog3.png"]);
   <div class="container py-5 max-sm:px-3">
     <div class="flex justify-between cursor-pointer group py-6">
       <h2 class="text-[#454545] text-3xl font-bold">Блог</h2>
-      <div
+      <nuxt-link to="/blog"
         class="flex items-center gap-2 border rounded-lg py-2 px-4 border-black max-sm:hidden hover:bg-[#454545] hover:text-white"
       >
         <button>Перейти в блог</button>
         <i
           class="bx bx-right-arrow-alt group-hover:translate-x-2 duration-100"
         ></i>
-      </div>
+      </nuxt-link>
     </div>
     <div class="grid grid-cols-3 gap-5 max-sm:grid-cols-1">
       <div v-for="(img, index) in imgs" :key="index" class="border rounded">

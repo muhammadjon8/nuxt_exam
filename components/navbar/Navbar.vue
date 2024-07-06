@@ -40,13 +40,13 @@ const store = usePiniaStore();
           </div>
         </div>
         <div class="flex gap-3 cursor-pointer relative">
-          <div class="absolute w-4 h-2 md:ml-11 md:bottom-11 max-sm:ml-4">
+          <nuxt-link to="/likedProducts" class="absolute w-4 h-2 md:ml-11 md:bottom-11 max-sm:ml-4">
             <p
               class="bg-red-500 text-center rounded-full text-white text-[12px]"
             >
               {{ store.likedProducts.length }}
             </p>
-          </div>
+          </nuxt-link>
           <nuxt-link to="/likedProducts" class="flex flex-col items-center">
             <i class="bx bx-heart text-[20px] max-sm:text-3xl"></i>
             <p class="max-sm:hidden">Избранное</p>
@@ -55,7 +55,7 @@ const store = usePiniaStore();
             <i class="bx bx-bar-chart text-[20px]"></i>
             <p class="max-sm:hidden">Сравнение</p>
           </div>
-          <div
+          <nuxt-link to="/korzina"
             class="absolute w-4 h-2 md:ml-[220px] md:bottom-11 max-sm:ml-[60px]"
           >
             <p
@@ -63,7 +63,7 @@ const store = usePiniaStore();
             >
               {{ store.basket.length }}
             </p>
-          </div>
+          </nuxt-link>
           <nuxt-link
             to="/korzina"
             class="flex flex-col items-center cursor-pointer"
