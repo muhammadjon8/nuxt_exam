@@ -1,6 +1,16 @@
-<script setup></script>
+<script setup>
+const isTrue = ref(false);
+
+const showModal = () => {
+  isTrue.value = true;
+};
+const hideModal = () => {
+  isTrue.value = false;
+};
+</script>
 
 <template>
+  <MainModalka v-if="isTrue" :hideModal="hideModal" />
   <div class="max-sm:hidden container py-3">
     <div class="flex justify-between items-center">
       <div class="flex gap-4">
@@ -13,7 +23,7 @@
       </div>
       <div class="flex gap-4 items-center">
         <p class="text-[#454545] font-semibold">8 (800) 890-46-56</p>
-        <button>Заказать звонок</button>
+        <button @click="showModal">Заказать звонок</button>
       </div>
     </div>
   </div>
