@@ -6,14 +6,18 @@ export default {
       container: {
         center: true,
         padding: {
-          default: "2rem",
-          sm: "1.5rem",
-          md: "2rem",
+          default: "1rem",
+          sm: "1rem",
+          md: "3rem",
           lg: "2.5rem",
           xl: "3rem",
         },
+        screens: {
+          xl: "1332px",
+          "2xl": "1332px",
+        },
       },
+      plugins: [],
     },
   },
-  plugins: [],
 };

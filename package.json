@@ -21,6 +21,7 @@
     "vue3-marquee": "^4.2.0"
   },
   "devDependencies": {
+    "@iconify-json/game-icons": "^1.1.9",
     "@iconify-json/heroicons": "^1.1.21",
     "@iconify-json/material-symbols": "^1.1.83",
     "@iconify-json/ph": "^1.1.13",

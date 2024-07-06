@@ -5,13 +5,17 @@ const route = useRoute();
 const id = route.params.id;
 
 const item = ref(null);
+const loading = ref(true);
+const error = ref(null);
 
 onMounted(async () => {
   try {
     const response = await axios.get(`https://6684e64e56e7503d1ae18994.mockapi.io/products/products/${id}`);
     item.value = response.data;
-  } catch (error) {
-    console.error("Error fetching item:", error);
+  } catch (err) {
+    error.value = err.message;
+  } finally {
+    loading.value = false;
   }
 });
 </script>
@@ -20,7 +24,7 @@ onMounted(async () => {
   <div class="container max-sm:px-3 py-9">
     <div v-if="loading">Loading...</div>
     <div v-if="error">Error: {{ error }}</div>
-    <div v-if="item && !loading && !error" class="flex items-center">
+    <div v-if="item && !loading && !error" class="flex items-center gap-10">
       <div class="w-1/2">
         <img :src="item.image" alt="" />
       </div>

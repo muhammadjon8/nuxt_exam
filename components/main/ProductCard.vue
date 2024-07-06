@@ -65,7 +65,7 @@ const router = useRouter();
             </p>
             <p class="text-[20px] font-semibold">{{ props?.product.price }}₽</p>
           </div>
-          <div class="py-3 z-50">
+          <div class="py-3">
             <button
               @click.stop="toggleBasket"
               class="bg-[#454545] px-4 rounded-2xl py-2 z-50"
@@ -76,7 +76,7 @@ const router = useRouter();
                 width="24"
                 height="24"
                 style="color: white"
-                class="text-2xl z-40"
+                class="md:text-2xl "
               />
               <Icon
                 v-else
@@ -84,7 +84,7 @@ const router = useRouter();
                 width="24"
                 height="24"
                 style="color: white"
-                class="text-2xl z-40"
+                class="md:text-2xl"
               />
             </button>
           </div>
