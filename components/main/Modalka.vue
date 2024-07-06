@@ -5,9 +5,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="absolute z-50 w-full">
+  <div class="fixed z-50 w-full">
     <div class="flex h-screen w-full bg-black/60 justify-center items-center">
-      <div class="bg-white w-[500px] rounded-xl p-8 relative">
+      <div class="bg-white md:w-[500px] rounded-xl p-8 relative">
         <button
           @click="props.hideModal"
           class="text-end border px-2 absolute right-5"

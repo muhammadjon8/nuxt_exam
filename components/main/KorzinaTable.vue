@@ -16,7 +16,7 @@ function remove(item) {
 </script>
 
 <template>
-  <div class="container max-sm:px-3">
+  <div class="container max-sm:hidden">
     <div class="flex items-center gap-3">
       <nuxt-link to="/" class="text-[#454545] py-4">Главная ></nuxt-link>
 
@@ -95,6 +95,68 @@ function remove(item) {
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="md:hidden container max-sm:px-3">
+    <div class="flex items-center gap-3">
+      <nuxt-link to="/" class="text-[#454545] py-4">Главная ></nuxt-link>
+
+      <nuxt-link to="/catalog" class="text-[#454545] py-4"
+        >Каталог >
+      </nuxt-link>
+      <p>Корзина ></p>
+    </div>
+    <div class="md:w-1/2">
+      <h2 class="text-[#454545] text-6xl max-sm:text-3xl font-bold py-5">Корзина</h2>
+    </div>
+    <div
+      v-if="store.basket.length == 0"
+      class="flex justify-center items-center flex-col mt-[100px]"
+    >
+      <Icon
+        name="game-icons:cardboard-box"
+        width="256"
+        height="256"
+        class="text-9xl"
+      />
+      <p class="text-[#454545] text-xl font-medium ml-4">
+        Вы не выбрали товара на Корзина
+      </p>
+    </div>
+  </div>
+  <div v-for="item in store.basket" :key="item.id">
+    <div class="flex bg-[#F2F2F2] rounded-lg py-5">
+      <div class="w-1/4 px-2 py-3">
+        <img :src="item.image" alt="" class="rounded" />
+      </div>
+      <div class="mx-5">
+        <p class="font-semibold text-xl text-[#454545]">
+          {{ item.description }}
+        </p>
+        <p class="font-bold text-2xl text-[#454545]">
+          {{ item.price * item.quantity }} ₽
+        </p>
+        <p class="font-normal text-start text-[#454545]">
+          {{ item.about }}
+        </p>
+        <div class="flex justify-between">
+          <div class="flex gap-3">
+            <button @click="decrement(item)" class="text-3xl">-</button>
+            <p class="border p-5">{{ item.quantity }}</p>
+            <button @click="item.quantity++" class="text-3xl">+</button>
+          </div>
+          <button @click="remove(item)">
+            <Icon
+              name="material-symbols:delete-outline"
+              width="24"
+              height="24"
+              style="color: black"
+              class="text-2xl"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

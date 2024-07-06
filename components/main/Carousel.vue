@@ -10,15 +10,15 @@
             disableOnInteraction: false,
           }"
           :modules="modules"
-          class="mySwiper max-sm:w-[300px]"
+          class="mySwiper max-sm:w-[400px]"
         >
           <swiper-slide v-for="(item, index) in 7" :key="index">
             <div class="md:flex gap-[199px] mb-[47px] py-9 md:px-10 rounded-xl bg-[#F2F2F2]">
-              <img src="/karuselimg.png" alt="" class="md:hidden w-[300px]" />
-              <p class="md:hidden w-[300px] text-3xl font-bold leading-9">
+              <img src="/karuselimg.png" alt="" class="md:hidden w-[300px] mx-7" />
+              <p class="md:hidden w-[300px] text-3xl font-bold leading-9 mx-7">
                 Скидка 15% на все подвесные светильники
               </p>
-              <p class="bg-[#454545] py-1 px-4 text-3xl rounded-full text-white md:hidden w-3/4"
+              <p class="bg-[#454545] py-1 px-4 mx-6 text-3xl rounded-full text-white md:hidden w-3/4"
                 >до 5 февраля</p
               >
               <img src="/karusel.png" class="max-sm:hidden" alt="Candle" />

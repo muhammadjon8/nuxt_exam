@@ -2,15 +2,29 @@
 import { usePiniaStore } from "../../store";
 
 const store = usePiniaStore();
+const isTrue = ref(false);
+const openMenu = () => {
+  isTrue.value = !isTrue.value;
+};
+const closeMenu = () => {
+  isTrue.value = false;
+};
 </script>
 
 <template>
+  <MainMenuMobile v-if="isTrue" :closeMenu="closeMenu" />
+
   <div
-    class="sticky top-0 left-0 backdrop-blur-lg bg-white/30 md:py-5 max-sm:pb-3 max-sm:px-3 z-50"
+    class="sticky top-0 left-0 backdrop-blur-lg bg-white/30 md:py-5 max-sm:pb-3 max-sm:px-3 z-40"
   >
     <div class="container">
-      <div class="flex justify-between gap-3 items-center max-sm:py-3">
-        <img src="/menu.png" alt="" class="md:hidden w-8 h-4" />
+      <div class="flex justify-around gap-2 items-center max-sm:py-3">
+        <img
+          @click="openMenu"
+          src="/menu.png"
+          alt=""
+          class="md:hidden w-8 h-4"
+        />
         <nuxt-link to="/" class="flex items-center gap-3">
           <img src="/logo.png" alt="" class="h-[27px] w-[27px]" />
           <h1 class="md:text-[29px] font-normal">NORNLIGHT</h1>
@@ -40,7 +54,10 @@ const store = usePiniaStore();
           </div>
         </div>
         <div class="flex gap-3 cursor-pointer relative">
-          <nuxt-link to="/likedProducts" class="absolute w-4 h-2 md:ml-11 md:bottom-11 max-sm:ml-4">
+          <nuxt-link
+            to="/likedProducts"
+            class="absolute w-4 h-2 md:ml-11 md:bottom-11 max-sm:ml-4"
+          >
             <p
               class="bg-red-500 text-center rounded-full text-white text-[12px]"
             >
@@ -55,7 +72,8 @@ const store = usePiniaStore();
             <i class="bx bx-bar-chart text-[20px]"></i>
             <p class="max-sm:hidden">Сравнение</p>
           </div>
-          <nuxt-link to="/korzina"
+          <nuxt-link
+            to="/korzina"
             class="absolute w-4 h-2 md:ml-[220px] md:bottom-11 max-sm:ml-[60px]"
           >
             <p

@@ -9,9 +9,9 @@ const store = usePiniaStore();
     <div class="flex items-center gap-3">
       <nuxt-link to="/" class="text-[#454545] py-4">Главная ></nuxt-link>
     </div>
-    <div class="py-9">
+    <div class="">
       <div class="md:w-1/2">
-        <h2 class="text-[#454545] text-6xl font-bold py-5">Избранные товары</h2>
+        <h2 class="text-[#454545] text-6xl max-sm:text-3xl font-bold py-5">Избранные товары</h2>
       </div>
       <div class="grid grid-cols-4 gap-5 max-sm:grid-cols-2">
         <MainProductCard
