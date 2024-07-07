@@ -54,6 +54,7 @@ const hideModal = () => {
           class="bg-[#454545] text-white px-6 py-3 rounded-full lg:flex w-full"
         >
           <nuxt-link
+            @click="props.closeMenu"
             to="/catalog"
             class="flex justify-center gap-2 items-center"
           >
