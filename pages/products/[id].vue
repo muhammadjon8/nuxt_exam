@@ -1,5 +1,8 @@
 <script setup>
 import axios from "axios";
+import { usePiniaStore } from "../../store";
+
+const store = usePiniaStore();
 
 const route = useRoute();
 const id = route.params.id;
@@ -10,7 +13,9 @@ const error = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`https://6684e64e56e7503d1ae18994.mockapi.io/products/products/${id}`);
+    const response = await axios.get(
+      `https://6684e64e56e7503d1ae18994.mockapi.io/products/products/${id}`
+    );
     item.value = response.data;
   } catch (err) {
     error.value = err.message;
@@ -18,19 +23,36 @@ onMounted(async () => {
     loading.value = false;
   }
 });
+const toggleLike = (data) => {
+  store.addLikedProducts(data);
+};
+
+const toggleBasket = (data) => {
+  store.addToKorzina(data);
+};
+
+const isInKorzina = computed(() => {
+  return store.basket.some((p) => p.id === props.product.id);
+});
+
+const isLiked = computed((data) => {
+  return store.likedProducts.some((p) => p.id === data.id);
+});
+
+const router = useRouter();
 </script>
 
 <template>
   <div class="container max-sm:px-3 py-9">
     <div v-if="loading">Loading...</div>
     <div v-if="error">Error: {{ error }}</div>
-    <div v-if="item && !loading && !error" class="flex items-center gap-10">
+    <div v-if="item && !loading && !error" class="flex gap-10">
       <div class="w-1/2">
         <img :src="item.image" alt="" />
       </div>
-      <div class="w-1/2">
-        <h2>{{ item.description }}</h2>
-        <p>Scott</p>
+      <div class="w-1/2 text-[#B3B3B3] flex flex-col gap-3">
+        <h2 class="text-5xl pb-9 text-[#454545]">{{ item.description }}</h2>
+        <p class="">Scott</p>
         <div class="flex justify-between">
           <p>Артикул: {{ item.artikul }}</p>
           <div class="flex gap-3">
@@ -40,13 +62,26 @@ onMounted(async () => {
           </div>
         </div>
         <p class="text-green-500">В наличии</p>
-        <div class="flex gap-10">
-          <p>{{ item.price }}</p>
-          <p class="line-through">
-            {{ item.sale }}
-          </p>
+        <div class="flex gap-10 items-center">
+          <p class="text-3xl text-[#454545]">{{ item.price }}₽</p>
+          <p class="line-through text-xl">{{ item.sale }}₽</p>
         </div>
-        <p>{{ item.about }}</p>
+        <p class="text-[#454545] text-xl py-5">{{ item.about }}</p>
+        <div class="flex gap-5">
+          <button
+            @click.stop="toggleBasket(item)"
+            class="py-3 px-7 bg-[#454545] text-white rounded-xl"
+          >
+            В корзину
+          </button>
+          <div
+            @click.stop="toggleLike(item)"
+            class="w-14 h-14 bg-[#F8F8F8] flex items-center justify-center rounded-xl"
+          >
+            <button v-if="isLiked" class="text-2xl">❤️</button>
+            <button v-else class="text-2xl">🤍</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

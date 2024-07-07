@@ -2,6 +2,7 @@
 import { usePiniaStore } from "../../store";
 
 const store = usePiniaStore();
+
 const props = defineProps({
   product: {
     type: Object,
@@ -35,35 +36,21 @@ const router = useRouter();
       class="relative p-5 border rounded-md shadow-lg cursor-pointer"
     >
       <button @click.stop="toggleLike" class="absolute right-0 text-3xl">
-        <Icon
-          v-show="isLiked"
-          name="ph:heart-fill"
-          width="24"
-          height="24"
-          class="mr-4 z-40"
-          style="color: red"
-        />
-        <Icon
-          v-show="!isLiked"
-          name="ph:heart-fill"
-          width="24"
-          height="24"
-          class="mr-4 z-40"
-          style="color: gray"
-        />
+        <button v-if="isLiked">❤️</button>
+        <button v-else>🤍</button>
       </button>
 
       <div>
-        <img :src="props?.product.image" alt="" class="w-[90%]" />
+        <img :src="props.product.image" alt="" class="w-[90%]" />
         <p class="text-[20px] font-medium py-3 h-[90px]">
-          {{ props?.product.description }}
+          {{ props.product.description }}
         </p>
         <div class="flex justify-between items-end z-40">
           <div class="py-3">
             <p class="text-[#454545] line-through">
-              {{ props?.product.sale }} ₽
+              {{ props.product.sale }} ₽
             </p>
-            <p class="text-[20px] font-semibold">{{ props?.product.price }}₽</p>
+            <p class="text-[20px] font-semibold">{{ props.product.price }}₽</p>
           </div>
           <div class="py-3">
             <button
@@ -76,7 +63,7 @@ const router = useRouter();
                 width="24"
                 height="24"
                 style="color: white"
-                class="md:text-2xl "
+                class="md:text-2xl"
               />
               <Icon
                 v-else

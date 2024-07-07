@@ -1,6 +1,14 @@
 <script setup>
 import { usePiniaStore } from "../../store";
 
+useHead({
+  title: "Main page",
+  link: {
+    href: "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css",
+    rel: "stylesheet",
+  },
+});
+
 const store = usePiniaStore();
 const isTrue = ref(false);
 const openMenu = () => {
