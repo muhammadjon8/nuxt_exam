@@ -57,11 +57,11 @@ function remove(item) {
       </thead>
       <tbody>
         <tr class="border-b" v-for="item in store.basket" :key="item.id">
-          <td class="px-8 py-5">
+          <td class="p-5">
             <img
               :src="item.image"
               alt="Product Image"
-              class="h-[100px] w-[100px] rounded"
+              class="h-[80px] w-[100px] rounded"
             />
           </td>
           <td>
@@ -69,7 +69,7 @@ function remove(item) {
               <p class="font-semibold text-xl text-[#454545] px-2">
                 {{ item.description }}
               </p>
-              <p class="font-bold">{{ item.price * item.quantity }} ₽</p>
+              <p class="font-bold text-xl">{{ item.price * item.quantity }} ₽</p>
             </div>
           </td>
           <td class="font-normal text-start">{{ item.about }}</td>
