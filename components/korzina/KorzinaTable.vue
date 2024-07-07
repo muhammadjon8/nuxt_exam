@@ -124,7 +124,7 @@ function remove(item) {
       </p>
     </div>
   </div>
-  <div class="md:hidden" v-for="item in store.basket" :key="item.id">
+  <div class="md:hidden px-3" v-for="item in store.basket" :key="item.id">
     <div class="flex bg-[#F2F2F2] rounded-lg py-5">
       <div class="w-1/4 px-2 py-3">
         <img :src="item.image" alt="" class="rounded" />
