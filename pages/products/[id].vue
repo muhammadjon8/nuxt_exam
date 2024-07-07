@@ -1,5 +1,7 @@
 <script setup>
 import axios from "axios";
+import { ref, computed, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import { usePiniaStore } from "../../store";
 
 const store = usePiniaStore();
@@ -23,23 +25,22 @@ onMounted(async () => {
     loading.value = false;
   }
 });
-const toggleLike = (data) => {
-  store.addLikedProducts(data);
+
+const toggleLike = () => {
+  store.addLikedProducts(item.value);
 };
 
-const toggleBasket = (data) => {
-  store.addToKorzina(data);
+const toggleBasket = () => {
+  store.addToKorzina(item.value);
 };
 
 const isInKorzina = computed(() => {
-  return store.basket.some((p) => p.id === props.product.id);
+  return store.basket.some((p) => p.id === item.value.id);
 });
 
-const isLiked = computed((data) => {
-  return store.likedProducts.some((p) => p.id === data.id);
+const isLiked = computed(() => {
+  return store.likedProducts.some((p) => p.id === item.value.id);
 });
-
-const router = useRouter();
 </script>
 
 <template>
@@ -68,14 +69,15 @@ const router = useRouter();
         </div>
         <p class="text-[#454545] text-xl py-5">{{ item.about }}</p>
         <div class="flex gap-5">
-          <button
-            @click.stop="toggleBasket(item)"
+          <div
+            @click.stop="toggleBasket"
             class="py-3 px-7 bg-[#454545] text-white rounded-xl"
           >
-            В корзину
-          </button>
+            <button v-if="!isInKorzina">В корзину</button>
+            <button v-else>Удалит из корзину</button>
+          </div>
           <div
-            @click.stop="toggleLike(item)"
+            @click.stop="toggleLike"
             class="w-14 h-14 bg-[#F8F8F8] flex items-center justify-center rounded-xl"
           >
             <button v-if="isLiked" class="text-2xl">❤️</button>
