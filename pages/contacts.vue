@@ -24,26 +24,31 @@
   </div>
   <MainMap />
   <div class="container relative flex justify-center">
-    <div class="absolute bg-[#454545] flex justify-between items-center px-6 py-8 gap-10 bottom-10 text-white" >
-      <div>
+    <div
+      class="md:absolute bg-[#454545] max-sm:bg-[#FFFFFF] max-sm:w-[400px] md:flex justify-between items-center px-6 py-8 gap-10 bottom-10 md:text-white"
+    >
+      <div class="py-2">
         <p>Адрес магазина</p>
-      <p>г. Москва, Дмитровское шоссе д.100с2</p>
-    </div>
-    <div>
-      <p>Почта</p>
-      <p>NORNLIGHT@mail.ru</p>
-    </div>
-    <div>
-      <p>Телефон</p>
-      <p>8 (800) 890-46-56</p>
-    </div>
-    <div>
-      <nuxt-link to="/order" class="px-5 py-3 bg-white rounded-full text-black">
-        <button class="">Оставить заявку</button>
-      </nuxt-link>
+        <p>г. Москва, Дмитровское шоссе д.100с2</p>
+      </div>
+      <div class="py-2">
+        <p>Почта</p>
+        <p>NORNLIGHT@mail.ru</p>
+      </div>
+      <div class="py-2">
+        <p>Телефон</p>
+        <p>8 (800) 890-46-56</p>
+      </div>
+      <div class="py-5">
+        <nuxt-link
+          to="/order"
+          class="px-5 py-3 max-sm:bg-[#454545] bg-white rounded-full text-black max-sm:text-white"
+        >
+          <button class="">Оставить заявку</button>
+        </nuxt-link>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <style scoped></style>

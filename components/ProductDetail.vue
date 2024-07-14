@@ -13,7 +13,7 @@ const item = ref(null);
 const loading = ref(true);
 const error = ref(null);
 
-onMounted(async () => {
+const fetchData = async () => {
   try {
     const response = await axios.get(
       `https://6684e64e56e7503d1ae18994.mockapi.io/products/products/${id}`
@@ -24,7 +24,8 @@ onMounted(async () => {
   } finally {
     loading.value = false;
   }
-});
+};
+fetchData();
 
 const toggleLike = () => {
   store.addLikedProducts(item.value);
