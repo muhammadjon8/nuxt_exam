@@ -7,6 +7,12 @@
     <FlipCard imageSrc="https://picsum.photos/200/300?random=5" />
     <FlipCard imageSrc="https://picsum.photos/200/300?random=6" />
   </div>
+  <div class="overflow-hidden w-full">
+    <spline-viewer
+    url="https://prod.spline.design/tEcPMEIb69Yt4AWc/scene.splinecode"
+    class="w-1/2 h-[500px] overflow-hidden"
+  ></spline-viewer>
+  </div>
 </template>
 
 <script setup>
